@@ -1,0 +1,25 @@
+node_modules
+
+/out/
+
+/dist/
+/build/
+
+.vscode/
+.idea/
+*.sublime-workspace
+
+*.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.swp
+*.tmp
+*.bak
+*.pid
+*.seed
+*.pid.lock

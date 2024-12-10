@@ -1,0 +1,23 @@
+{
+  "name": "html-framework",
+  "version": "0.5.0",
+  "description": "Framework for using only html and a server",
+  "main": "init.js",
+  "scripts": {
+    "build": "node init.js",
+    "build:app": "tsc --project tsconfig.app.json"
+  },
+  "keywords": [
+    "JC"
+  ],
+  "author": "JC",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "html-framework": "file:"
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "extends":"./tsconfig.base.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "outDir": "./out/app",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "*.html": ["./out/app/pages/*/index.js"]
+        },
+        "esModuleInterop": true,  
+        "skipLibCheck": true,  
+        "resolveJsonModule": true
+    },
+    "include": ["src/app/**/*"]
+}
