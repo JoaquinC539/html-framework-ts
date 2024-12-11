@@ -5,7 +5,8 @@
   "main": "init.js",
   "scripts": {
     "build": "node init.js",
-    "build:app": "tsc --project tsconfig.app.json"
+    "build:app": "tsc --project tsconfig.app.json",
+    "watch": "node watcher.js"
   },
   "keywords": [
     "JC"
@@ -13,6 +14,8 @@
   "author": "JC",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "chokidar": "^4.0.1",
     "esbuild": "^0.24.0",
     "typescript": "^5.7.2"
   },

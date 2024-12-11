@@ -3,7 +3,9 @@ export abstract class BasePage extends HTMLElement{
         super();
     }
 
+    
     async connectedCallback(){
+        
         const template=this.getTemplate();
         this.innerHTML=template;
 
