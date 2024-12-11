@@ -2,14 +2,13 @@ export abstract class BasePage extends HTMLElement{
     constructor(){
         super();
     }
-
-    
     async connectedCallback(){
         
         const template=this.getTemplate();
         this.innerHTML=template;
 
         await this.asyncInitialize();
+        this.initialize();
         this.script();
     }
 

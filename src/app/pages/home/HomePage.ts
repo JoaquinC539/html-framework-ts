@@ -1,5 +1,5 @@
 
-import content from './home.html'
+import content from "./home.html";
 import { BasePage } from '../abstract/BasePage';
 import axios from 'axios';
 
