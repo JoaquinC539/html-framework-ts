@@ -1,4 +1,4 @@
-import { BasePage } from "./pages/abstract/BasePage";
+import { BasePage } from "./abstract/BasePage";
 import content from "./AppRoot.html";
 import "./app.css"
 import "bootstrap/dist/css/bootstrap.min.css"

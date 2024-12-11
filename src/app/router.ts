@@ -1,9 +1,6 @@
-import { BasePage } from "./pages/abstract/BasePage";
+import { BasePage } from "./abstract/BasePage";
 import { routes } from "./routes";
-
-const rootDiv = document.getElementById('app')!;
-
-// import 
+import notfoundTamplate from "./notFound.html";
 
 export class Router extends BasePage {
     
@@ -54,10 +51,38 @@ export class Router extends BasePage {
                
     }
 
+    private matchRoute(route:string,path:string):{params:Record<string,string>}|null{        
+        const routeSegments = route.split('/').filter(segment => segment !== '');
+        const pathSegments = path.split('/').filter(segment => segment !== '');
+        const params:Record<string,string>={};
+        if (routeSegments.length !== pathSegments.length) {
+            return null;
+        }
+        for(let i=0;i<routeSegments.length;i++){
+            const routeSegment=routeSegments[i];            
+            const pathSegment=pathSegments[i];
+            if(routeSegment.startsWith(":")){
+                const paramName=routeSegment.slice(1);
+                params[paramName]=pathSegment;
+            }else if(routeSegment!==pathSegment){
+                return null;
+            }
+        }
+        return {params}
+        
+    }
+
     getContentRoute(path:string):string{
         try {
-            const content = routes[path];
-            return content !== undefined ? content : `<h1>404 - Page Not Found</h1>`;
+            for (const route in routes){
+                const paramMatch=this.matchRoute(route,path)
+                if(paramMatch){
+                    const content = routes[route];
+                    return content !== undefined ? content : notfoundTamplate;
+                }
+            }
+            return  notfoundTamplate;
+            
         } catch (error) {
             console.error(error)
             return  `<h1>500 - Error in router</h1>`;
