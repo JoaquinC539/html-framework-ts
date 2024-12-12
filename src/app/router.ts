@@ -1,8 +1,11 @@
-import { BasePage } from "./abstract/BasePage";
+import { BaseComponent } from "./abstract/BaseComponent";
 import { routes } from "./routes";
 import notfoundTamplate from "./notFound.html";
+import { CustomElement } from "./utils/CustomElement";
 
-export class Router extends BasePage {
+
+@CustomElement("router-outlet")
+export class Router extends BaseComponent {
 
     private static _currentParams:Record<string,string>={}
 
@@ -106,7 +109,7 @@ export class Router extends BasePage {
         })
     }
 }
-export default customElements.define("router-outlet", Router)
+
 
 
 

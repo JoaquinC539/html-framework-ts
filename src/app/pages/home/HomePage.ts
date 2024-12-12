@@ -1,9 +1,11 @@
 
 import content from "./home.html";
-import { BasePage } from '../../abstract/BasePage';
+import { BaseComponent } from "../../abstract/BaseComponent";
 import axios from 'axios';
+import { CustomElement } from "../../utils/CustomElement";
 
-export class HomePage extends BasePage{
+@CustomElement("home-page")
+export class HomePage extends BaseComponent{
     protected fetchedData:any;
     protected getTemplate(): string {
         return content;
@@ -28,7 +30,7 @@ export class HomePage extends BasePage{
         
 }
 
-export default customElements.define("home-page", HomePage)  ;
+
 
 
 

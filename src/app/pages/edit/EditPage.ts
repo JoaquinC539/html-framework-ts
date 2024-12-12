@@ -1,7 +1,7 @@
-import { BasePage } from "../../abstract/BasePage";
+import { BaseComponent } from "../../abstract/BaseComponent";
 import { Router } from "../../Router";
 import template from './EditPage.html'
-export class HomePage extends BasePage{
+export class HomePage extends BaseComponent{
     protected getTemplate(): string {
         return template;
     }

@@ -1,4 +1,4 @@
-export abstract class BasePage extends HTMLElement{
+export abstract class BaseComponent extends HTMLElement{
     constructor(){
         super();
     }
