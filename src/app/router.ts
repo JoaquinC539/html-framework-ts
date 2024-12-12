@@ -3,9 +3,18 @@ import { routes } from "./routes";
 import notfoundTamplate from "./notFound.html";
 
 export class Router extends BasePage {
+
+    private static _currentParams:Record<string,string>={}
+
+    static setParams(params:Record<string,string>){
+        this._currentParams=params;
+    }
+    public static getParams(){
+        return this._currentParams;
+    }
     
     protected getTemplate(): string {
-        const path=this.checkInitialRoute();  
+        const path=this.checkInitialRoute();
         history.pushState({}, "", path);       
         return this.getContentRoute(path);
     }
@@ -26,6 +35,7 @@ export class Router extends BasePage {
             const segments = pathname.split("/");
             const route = segments[segments.length - 1] === "index.html" ? "/" : pathname
             return route;
+            // return "/";
         }
     }
 
@@ -61,7 +71,7 @@ export class Router extends BasePage {
         for(let i=0;i<routeSegments.length;i++){
             const routeSegment=routeSegments[i];            
             const pathSegment=pathSegments[i];
-            if(routeSegment.startsWith(":")){
+            if(routeSegment.startsWith(":")){                
                 const paramName=routeSegment.slice(1);
                 params[paramName]=pathSegment;
             }else if(routeSegment!==pathSegment){
@@ -77,7 +87,8 @@ export class Router extends BasePage {
             for (const route in routes){
                 const paramMatch=this.matchRoute(route,path)
                 if(paramMatch){
-                    const content = routes[route];
+                    Router.setParams(paramMatch.params)
+                    const content=routes[route]
                     return content !== undefined ? content : notfoundTamplate;
                 }
             }
