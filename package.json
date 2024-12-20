@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "build:app": "tsc --project tsconfig.app.json",
-    "watch": "node watcher.js"
+    "dev": "node watcher.js"
   },
   "keywords": [
     "JC"
