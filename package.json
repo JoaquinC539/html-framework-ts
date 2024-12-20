@@ -4,7 +4,7 @@
   "description": "Framework for using only html and a server",
   "main": "init.js",
   "scripts": {
-    "build": "node init.js",
+    "build": "node build.js",
     "build:app": "tsc --project tsconfig.app.json",
     "watch": "node watcher.js"
   },
