@@ -5,12 +5,9 @@
   "main": "init.js",
   "scripts": {
     "build": "node build.js",
-    "build:app": "tsc --project tsconfig.app.json",
+    "tscompile": "tsc --project tsconfig.app.json",
     "dev": "node watcher.js"
-  },
-  "keywords": [
-    "JC"
-  ],
+  },  
   "author": "JC",
   "license": "MIT",
   "devDependencies": {
