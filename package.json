@@ -7,12 +7,12 @@
     "build": "node build.js",
     "tscompile": "tsc --project tsconfig.app.json",
     "dev": "node watcher.js"
-  },  
+  },
   "author": "JC",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^3.0.3",
-    "chokidar": "^4.0.1",
+    "browser-sync": "3.0.4",
+    "chokidar": "4.0.3",
     "esbuild": "^0.24.0",
     "typescript": "^5.7.2"
   },

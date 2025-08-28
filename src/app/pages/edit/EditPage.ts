@@ -7,6 +7,8 @@ export class HomePage extends BaseComponent{
     }
     protected script(): void {
         console.log(Router.getParams())
+        const params=Router.getParams();
+        document.getElementById("params")!.innerHTML=JSON.stringify(params);
     }
     
 }
