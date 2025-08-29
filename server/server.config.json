@@ -1,7 +1,0 @@
-{
-    "port":8081,
-    "root":"../build/app",
-    "fallBackToIndex":true,
-    "entryPoint":"index.html",
-    "allowed-origins":["*"]
-}

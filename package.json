@@ -1,24 +1,15 @@
 {
-  "name": "html-framework",
-  "version": "0.5.0",
-  "description": "Framework for using only html and a server",
-  "main": "init.js",
+  "name": "lean",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "node build.js",
-    "tscompile": "tsc --project tsconfig.app.json",
-    "dev": "node watcher.js"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "author": "JC",
-  "license": "MIT",
   "devDependencies": {
-    "browser-sync": "3.0.4",
-    "chokidar": "4.0.3",
-    "esbuild": "^0.24.0",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "axios": "^1.7.9",
-    "bootstrap": "^5.3.3",
-    "html-framework": "file:"
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
   }
 }
